@@ -6,6 +6,7 @@ import prodOneThumnail from "../assets/projects/project-1.jpg"  //portfolio
 import projectTwoThumnail from "../assets/projects/project-2.jpg"  //eduweb
 import projectThreeThumnail from "../assets/projects/project-3.jpg" //e-comm
 import projectFourThumnail from "../assets/projects/project-4.jpg"  //Sumz
+import projectFiveThumnail from "../assets/projects/project-5.png"  //Tripster.ai
 
 import { motion } from 'framer-motion';
 
@@ -36,6 +37,13 @@ const DevProjects = () => {
   };
 
   const projects = [
+    {
+      href: "https://tripster-ai.vercel.app/",
+      thumbnail: projectFiveThumnail,
+      title: "Tripster.ai - AI Trip Planner",
+      description: "AI-powered travel planning app using React, Google Gemini AI, Firebase Firestore, and Google APIs.",
+      tech: ["React", "Shadcn", "Firebase", "Google Places API", "Google OAuth"]
+    },
     {
       href: "https://articlesummarizer-npe9xyr3j-harsh-nikam07s-projects.vercel.app/",
       thumbnail: projectFourThumnail,
