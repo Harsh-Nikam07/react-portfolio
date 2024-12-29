@@ -21,10 +21,10 @@ const iconVariantsv2 = {
 };
 
 const onbuttonClick = () => {
-    const pdfUrl = "/HarshNikamCV(21-09-2024).pdf"; 
+    const pdfUrl = "/HarshNikamResume(23-12-2024).pdf"; 
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "Harsh NikamCV(21-09-2024).pdf"; 
+    link.download = "Harsh NikamCV(23-12-2024).pdf"; 
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
