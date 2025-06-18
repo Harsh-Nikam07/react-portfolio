@@ -69,11 +69,11 @@ const Projects = () => {
               Projects
             </span>
           </div>
-          <div className='tabs flex flex-wrap gap-5 space-x-4 mt-4 md:mt-0 mb-5'>
+          <div className='tabs flex flex-wrap flex-row gap-0 md:gap-5 space-x-4 m-0 mt-4 md:mt-0 mb-5'>
             {['Development', 'UI / UX Design',].map((tab, index) => (
               <motion.button
                 key={tab}
-                className={`tabButton ${activeTab === tab ? 'active' : ''} px-4 py-2 rounded-lg transition-colors duration-300 ${activeTab === tab ? 'bg-[#6200ee] text-white' : 'bg-black border-2 border-[#6200ee] text-white hover:bg-[#6200ee]'}`}
+                className={`tabButton ${activeTab === tab ? 'active' : ''} px-4 py-2 rounded-lg transition-colors duration-300 ${activeTab === tab ? 'bg-[#6200ee] text-white ' : 'bg-black border-2 border-[#6200ee] text-white hover:bg-[#6200ee]'}`}
                 onClick={() => setActiveTab(tab)}
                 
                 whileTap={{ scale: 0.9 }}

@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <>
         <div className='group w-full h-full flex justify-center items-center flex-col md:p-7 pt-4  mb-10 md:mb-0 border-t-[0.5px] border-[hsl(265,100%,27%)]'>
-        <div className='w-3/5 h-full flex justify-center items-center flex-col  bg-black '>
+        <div className='w-3/5 h-full flex justify-center items-center flex-col  '>
             <div className='w-full md:h-[4rem] h-full text-white flex justify-between items-center md:flex-row flex-col md:gap-4 gap-4'>
 
             <a href="mailto:harshnikam4536@gmail.com" className='card example-1 '>

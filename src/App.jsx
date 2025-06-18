@@ -30,11 +30,12 @@ const App = () => {
 
   return (
     <div className='relative overflow-x-hidden h-full w-full parent-b text-black selection:bg-purple-500 selection:text-black'>
-      <div className='bg-main fixed top-0 left-0 h-full w-full z-[-1]'>
-        <div className='bg-sub absolute top-0 z-[-2] h-screen w-screen'></div>
+      {/* Background grid layer */}
+      <div className="fixed top-0 left-0 h-full w-full z-[-1] bg-slate-950">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]" />
       </div>
-      
 
+      {/* Your content */}
       <div className='container mx-auto px-8'>
         <Dock />
       </div>
@@ -47,9 +48,13 @@ const App = () => {
       <Projects />
       <Separator />
       <Exp />
-      <Footer/>
+      <Footer />
     </div>
+
   );
 };
 
 export default App;
+
+
+<div class="relative h-full w-full bg-slate-950"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div></div>

@@ -1,112 +1,81 @@
-import React from 'react'
+import React from 'react';
+import { experiences } from '../../src/utils/data/experience';
+
+const linkifyText = (text) => {
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const parts = text.split(urlRegex);
+
+  return parts.map((part, index) => {
+    if (urlRegex.test(part)) {
+      return (
+        <a
+          key={index}
+          href={part}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='text-blue-500 underline break-all'
+        >
+          {part}
+        </a>
+      );
+    } else {
+      return <span key={index}>{part}</span>;
+    }
+  });
+};
 
 const Exp = () => {
   return (
-    <>
-      <div className='h-full flex items-center justify-center mt-10 bg-transparent flex-wrap flex-col ' id='Exp'>
-        <div className='heroParent flex w-full h-fit justify-center items-center flex-col gap-10 p-5 flex-wrap rounded-3xl'>
-          <div className='heroSubSection flex items-center w-full justify-between flex-col'>
-            <div className='mainHeading flex justify-start items-start '>
-              <span className='md:text-4xl text-2xl text-white font-semibold'>
-                Work Experience
-              </span>
-            </div>
+    <div className='h-full flex items-center justify-center mt-10 bg-transparent flex-wrap flex-col' id='Exp'>
+      <div className='heroParent flex w-full h-fit justify-center items-center flex-col gap-5 p-5 flex-wrap rounded-3xl'>
+        <div className='heroSubSection flex items-center w-full justify-between flex-col'>
+          <div className='mainHeading flex justify-start items-start'>
+            <span className='md:text-4xl text-2xl text-white font-semibold'>Work Experience</span>
           </div>
+        </div>
 
-          <div className='expParent w-full h-fit flex justify-center items-center flex-wrap flex-col gap-12'>
-            <div className='w-full md:w-3/5 p-3 flex justify-center items-center flex-col flex-grow gap-0 bg-black text-white border border-black hover:border hover:border-[#6200ee] rounded-3xl transition-all duration-1200 ease-out'>
+        <div className='expParent w-full h-fit flex justify-center items-center flex-wrap flex-col gap-12'>
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              className='w-full md:w-3/5 p-3 flex justify-center items-center flex-col flex-grow gap-0 bg-black text-white border border-black hover:border hover:border-[#6200ee] rounded-3xl transition-all duration-1200 ease-out'
+            >
               <div className='w-full text-lg font-medium p-2'>
-                <span className=''>Front end Web Developer</span>
+                <span>{exp.role}</span>
               </div>
 
               <div className='w-full text-base flex justify-between items-center flex-row flex-wrap p-2 gap-2'>
-                <div className='companyName'>
-                  Zappkode Solutions
-                </div>
-                <div className='companyName'>
-                  Jan 2024 - Aug 2024
-                </div>
-              </div>
-
-              <div className='desc p-2 flex justify-start items-center w-full '>
-                <ul className='list-disc pl-5 text-sm gap-2 flex justify-start items-start flex-col'>
-                  <li><span className='font-medium mr-2'>Enhanced User Interfaces: </span>Improved the visual design and usability of existing web applications.</li>
-                  <li><span className=''>Project: <a className='text-blue-600 underline' href="https://vibetara.com/" target='_blank'>Vibetara:</a>  </span>Enhanced the user interface and developed new features.</li>
-                  <li><span className=''>Project: Kohinoor Book Management Admin Software:</span>Developed the user interface for the Kohinoor Book Management Admin software, ensuring a seamless and intuitive experience for administrators.</li>
-                  <li><span className=''>Simultaneous Project Management:</span>Successfully managed and maintained Vibetara while simultaneously developing an ERP application.</li>
-                </ul>
-              </div>
-
-              <div className='skills w-full p-2 flex justify-start items-center flex-row flex-wrap gap-2'>
-                <div className='flex justify-center items-center gap-2 py-1 px-3 text-xs rounded-full font-normal text-white border-2 border-[#6200ee] hover:bg-[#6200ee] '>
-                  <span> HTML </span>
-                </div>
-                <div className='flex justify-center items-center gap-2 py-1 px-3 text-xs rounded-full font-normal text-white border-2 border-[#6200ee] hover:bg-[#6200ee]'>
-                  <span> CSS </span>
-                </div>
-                <div className='flex justify-center items-center gap-2 py-1 px-3 text-xs rounded-full font-normal text-white border-2 border-[#6200ee] hover:bg-[#6200ee]'>
-                  <span> JavaScript </span>
-                </div>
-                <div className='flex justify-center items-center gap-2 py-1 px-3 text-xs rounded-full font-normal text-white border-2 border-[#6200ee] hover:bg-[#6200ee]'>
-                  <span> Spline </span>
-                </div>
-                <div className='flex justify-center items-center gap-2 py-1 px-3 text-xs rounded-full font-normal text-white border-2 border-[#6200ee] hover:bg-[#6200ee]'>
-                  <span> Figma </span>
-                </div>
-                <div className='flex justify-center items-center gap-2 py-1 px-3 text-xs rounded-full font-normal text-white border-2 border-[#6200ee] hover:bg-[#6200ee]'>
-                  <span> Flutter </span>
-                </div>
-                <div className='flex justify-center items-center gap-2 py-1 px-3 text-xs rounded-full font-normal text-white border-2 border-[#6200ee] hover:bg-[#6200ee]'>
-                  <span> Dart </span>
-                </div>
-              </div>
-            </div>
-
-            <div className='w-full md:w-3/5 p-3 flex justify-center items-center flex-col flex-grow gap-0 bg-black text-white border border-black hover:border hover:border-[#6200ee] rounded-3xl transition-all duration-1200 ease-out'>
-              <div className='w-full text-lg font-medium p-2'>
-                <span className=''>Front end developer Intern</span>
-              </div>
-
-              <div className='w-full text-base flex justify-between items-center flex-row flex-wrap p-2'>
-                <div className='companyName'>
-                  Kaliba Enterprises Pvt Ltd
-                </div>
-                <div className='companyName'>
-                  Jul 2023 - Aug 2023
-                </div>
+                <div className='companyName'>{exp.company}</div>
+                <div className='companyName'>{exp.duration}</div>
               </div>
 
               <div className='desc p-2 flex justify-start items-center w-full'>
                 <ul className='list-disc pl-5 text-sm gap-2 flex justify-start items-start flex-col'>
-                  <li>Developed responsive web pages using HTML, CSS, and Bootstrap.</li>
-                  <li>Contributed to UI design and prototyping with Figma.</li>
-                  <li>Implemented responsive design techniques for better mobile usability.</li>
+                  {exp.description.map((item, i) => (
+                    <li key={i}>
+                      <span className='font-medium'>{item.highlight}</span>{' '}
+                      {linkifyText(item.detail)}
+                    </li>
+                  ))}
                 </ul>
               </div>
 
               <div className='skills w-full p-2 flex justify-start items-center flex-row flex-wrap gap-2'>
-                <div className='flex justify-center items-center gap-2 py-1 px-3 text-xs rounded-full font-normal text-white border-2 border-[#6200ee] hover:bg-[#6200ee]'>
-                  <span> HTML </span>
-                </div>
-                <div className='flex justify-center items-center gap-2 py-1 px-3 text-xs rounded-full font-normal text-white border-2 border-[#6200ee] hover:bg-[#6200ee]'>
-                  <span> CSS </span>
-                </div>
-                <div className='flex justify-center items-center gap-2 py-1 px-3 text-xs rounded-full font-normal text-white border-2 border-[#6200ee] hover:bg-[#6200ee]'>
-                  <span> Bootstrap </span>
-                </div>
-                <div className='flex justify-center items-center gap-2 py-1 px-3 text-xs rounded-full font-normal text-white border-2 border-[#6200ee] hover:bg-[#6200ee]'>
-                  <span> Responsive Design  </span>
-                </div>
-                <div className='flex justify-center items-center gap-2 py-1 px-3 text-xs rounded-full font-normal text-white border-2 border-[#6200ee] hover:bg-[#6200ee]'>
-                  <span> Figma </span>
-                </div>
+                {exp.tech.map((skill, i) => (
+                  <div
+                    key={i}
+                    className='flex justify-center items-center gap-2 py-1 px-3 text-xs rounded-full font-normal text-white border-2 border-[#6200ee] hover:bg-[#6200ee]'
+                  >
+                    <span>{skill}</span>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default Exp
+export default Exp;
